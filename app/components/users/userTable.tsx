@@ -33,7 +33,7 @@ export function UserTable({ users, isLoading }: UserTableProps) {
                 onClick={() => router.push(`/users/${user.id}`)}
               >
                 <td className="px-6 py-4 whitespace-nowrap">{user.name}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{user.email}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{(user.email || "").toLowerCase()}</td>
                 <td className="px-6 py-4 max-w-[392px] overflow-hidden text-ellipsis whitespace-nowrap">{`${
                   user.street || ""
                 }, ${user.state || ""}, ${user.city || ""}, ${
