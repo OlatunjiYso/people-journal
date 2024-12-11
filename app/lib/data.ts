@@ -1,9 +1,6 @@
 import { NewPost, Post, User, UserPostsResponse } from "./definitions";
 import { makeDeleteRequest, makeGetRequest, makePostRequest } from "./httpClient";
 
-function delay(time: number){
-    return new Promise((resolve, _)=> setTimeout(resolve, time));
-  }
 export async function fetchUsers(
     page: number
   ): Promise<{ users: User[]; total: number }> {
