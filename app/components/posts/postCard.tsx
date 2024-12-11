@@ -12,6 +12,9 @@ interface PostCardProps {
 export function PostCard({ post, onDelete, isDeleting }: PostCardProps) {
     const [showDeleteModal, setShowDeleteModal] = useState(false);
   
+    const handleDelete = () => {
+        onDelete(post.id);
+      };
     return (
       <>
         <div className="bg-white rounded-lg shadow-md h-[360px] flex flex-col">
@@ -34,10 +37,7 @@ export function PostCard({ post, onDelete, isDeleting }: PostCardProps) {
           <DeletePostModal
             post={post}
             onClose={() => setShowDeleteModal(false)}
-            onConfirm={() => {
-              onDelete(post.id);
-              setShowDeleteModal(false);
-            }}
+            onConfirm={handleDelete}
             isDeleting={isDeleting}
           />
         )}

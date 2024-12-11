@@ -44,6 +44,13 @@ const UserDetailsPage = ({ params }: { params: Promise<{ id: string }> }) => {
     );
   }
 
+  const handleSubmit = (title:string, body:string)=> {
+    createMutation.mutate({ title, body }, {
+        onSuccess: () => {
+          setShowNewPostModal(false);
+        },
+      });
+  }
   return (
     <>
       <Link href="/" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6">
@@ -73,12 +80,7 @@ const UserDetailsPage = ({ params }: { params: Promise<{ id: string }> }) => {
       {showNewPostModal && (
         <NewPostModal
           onClose={() => setShowNewPostModal(false)}
-          onSubmit={(title, body) => {
-            createMutation.mutate({ title, body });
-            if (createMutation.isSuccess) {
-              setShowNewPostModal(false);
-            }
-          }}
+          onSubmit={handleSubmit}
           isSubmitting={createMutation.isPending}
         />
       )}

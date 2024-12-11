@@ -31,15 +31,7 @@ export function DeletePostModal({ post, onClose, onConfirm, isDeleting }: Delete
             disabled={isDeleting}
           >
             {isDeleting ? (
-              <>
-                <div className="lds-ellipsis">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
                 <span className="ml-2">Deleting...</span>
-              </>
             ) : (
               'Delete'
             )}
