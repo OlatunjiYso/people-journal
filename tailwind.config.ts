@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      lineClamp: {
+        8: '8',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
