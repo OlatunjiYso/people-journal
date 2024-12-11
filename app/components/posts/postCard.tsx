@@ -25,7 +25,7 @@ export function PostCard({ post, onDelete, isDeleting }: PostCardProps) {
                 className="text-red-500 hover:text-red-700"
                 disabled={isDeleting}
               >
-                <Trash2 size={20} />
+                <Trash2 size={14} />
               </button>
             </div>
             <h3 className="text-xl font-semibold mb-3 line-clamp-2">{post.title}</h3>
