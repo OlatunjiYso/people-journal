@@ -17,8 +17,8 @@ export function PostCard({ post, onDelete, isDeleting }: PostCardProps) {
       };
     return (
       <>
-        <div className="bg-white rounded-lg shadow-md h-[360px] flex flex-col">
-          <div className="p-6 flex-1">
+        <div className="bg-white rounded-lg border border-gray-200 h-[360px] flex flex-col">
+          <div className="p-6 flex-1 text-gray-600">
             <div className="flex justify-end mb-2">
               <button
                 onClick={() => setShowDeleteModal(true)}
@@ -29,7 +29,7 @@ export function PostCard({ post, onDelete, isDeleting }: PostCardProps) {
               </button>
             </div>
             <h3 className="text-xl font-semibold mb-3 line-clamp-2">{post.title}</h3>
-            <p className="text-gray-600 line-clamp-8">{post.body}</p>
+            <p className="line-clamp-8">{post.body}</p>
           </div>
         </div>
   
