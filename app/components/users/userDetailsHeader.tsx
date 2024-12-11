@@ -9,7 +9,7 @@ interface UserDetailsHeaderProps {
       <>
         <h1 className="text-3xl font-bold mb-2">{name}</h1>
         <p className="text-gray-600 mb-8">
-          {email} • {postCount} posts
+          {(email).toLowerCase()} • {postCount} posts
         </p>
       </>
     );
